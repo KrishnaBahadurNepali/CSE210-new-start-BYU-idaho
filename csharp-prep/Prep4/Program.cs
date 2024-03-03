@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 class Program
 {
@@ -8,7 +9,6 @@ class Program
 
         Console.WriteLine("Welcome in CSE210");
         List<int> numbers = new List<int>(); // you can see here list<variable type(int)> storeVariable(numbers)
-        List<int> sorted=new List<int>();
         // We can use do-while loop as well
         int userNumber = -1;
         while (userNumber != 0)
@@ -41,7 +41,6 @@ class Program
         // There are several ways to do this, such as sorting the list
         
         int max = numbers[0];
-        int min=-9999999;
 
         foreach (int number in numbers)
         {
@@ -50,18 +49,15 @@ class Program
                 // if this number is greater than the max, we have found the new max!
                 max = number;
             }
-            else if(number>min)
-            {
-               min=number;
-               sorted.Add(min);
-            }
         }
         Console.WriteLine($"The max is: {max}");
-
-        foreach(int Sort in sorted )
+        Console.WriteLine("The sorted list is: ");
+        numbers.Sort();
+        foreach(int number in numbers)
         {
-            Console.WriteLine(Sort);
+            Console.WriteLine(number);
         }
+
     }
 
 }
