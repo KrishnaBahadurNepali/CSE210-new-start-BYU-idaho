@@ -51,8 +51,11 @@ class Program
             }
         }
         Console.WriteLine($"The max is: {max}");
+        numbers.Sort();//This sorts the number incremently
+        var positiveNumber=numbers.Where(n=>n>0);
+        int closestToZero=positiveNumber.Min();
+        Console.WriteLine($"The smallest positive number that is closest to zero is: {closestToZero}");
         Console.WriteLine("The sorted list is: ");
-        numbers.Sort();
         foreach(int number in numbers)
         {
             Console.WriteLine(number);
