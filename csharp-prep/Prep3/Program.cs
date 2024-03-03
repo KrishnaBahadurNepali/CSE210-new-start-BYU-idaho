@@ -34,7 +34,7 @@ class Program
             }
         if((guess>101)||(guess<1))
             {
-                Console.WriteLine("You have entered Invalid number. Try again latter");
+                Console.WriteLine("You have entered Invalid number.");
             }
         
                 
