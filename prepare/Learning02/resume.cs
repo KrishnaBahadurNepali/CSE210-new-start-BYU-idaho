@@ -2,7 +2,7 @@ using System;
 
 public class Resume
 {
-    public string _name;
+    public string _name;//String name is public
 
     public List<Job> _jobs = new List<Job>(); // this can helps to make lists for the Jobs that in the resume.cs multiple jobs
 
