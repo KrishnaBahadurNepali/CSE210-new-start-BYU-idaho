@@ -69,8 +69,9 @@ class Program
             }
         else
             {
-                Console.WriteLine("Please try again latter.");
+                Console.WriteLine("Please try again latter!");
+                Console.WriteLine("Thank you! please visit again");
             }                                               
-                                                              //A >= 90;B >= 80;C >= 70;D >= 60;F < 60//
+                                                         //A >= 90;B >= 80;C >= 70;D >= 60;F < 60//
     }
 }

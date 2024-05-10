@@ -30,7 +30,7 @@ class Program
             {
                 Console.WriteLine($"Congratulations! {guess} is the correct number.");
                 Console.WriteLine($"you have took {attempt} attempt to guess it.");
-                Console.WriteLine("Thank you for playing game related to CSE210. Would you like to play again? yes for 'Y' No for 'N'. ");
+                Console.WriteLine("Thank you for playing game. Would you like to play again? yes for 'Y' No for 'N'. ");
             }
         if((guess>101)||(guess<1))
             {
