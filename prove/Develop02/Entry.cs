@@ -38,7 +38,7 @@ Content = content;
 }
 
     //Displays the content of an entry
-    public void DisplayEntry()
+    public void DisplayEntry() //Displays here
     {
         Console.WriteLine($"Date: {DateCreated}");
         Console.WriteLine($"Content: {Content}\n");
