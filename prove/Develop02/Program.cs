@@ -1,16 +1,3 @@
-// using System;
-
-// class Program
-// {
-//     static void Main(string[] args)
-//     {
-//         PromptGenerator The_PromptGenerator=new PromptGenerator();
-//         The_PromptGenerator.GetRandomPrompt();
-//         Console.WriteLine(The_PromptGenerator.GetRandomPrompt());
-
-//     }
-    
-// }
 using System;
 using System.IO;
 class Program
