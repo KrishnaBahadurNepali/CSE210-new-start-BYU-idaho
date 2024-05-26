@@ -46,21 +46,45 @@ namespace ScriptureMemorization
         {
             List<Scripture> scriptures = new List<Scripture>();
 
-            foreach (var line in File.ReadAllLines(filePath))
+            try
             {
-                var parts = line.Split('|');
-                var referenceParts = parts[0].Split(':');
-                string book = referenceParts[0];
-                int chapter = int.Parse(referenceParts[1]);
-                int startVerse = int.Parse(referenceParts[2]);
-                int endVerse = startVerse;
-                if (referenceParts.Length > 3)
+                foreach (var line in File.ReadAllLines(filePath))
                 {
-                    endVerse = int.Parse(referenceParts[3]);
-                }
+                    var parts = line.Split('|');
+                    if (parts.Length != 2)
+                    {
+                        Console.WriteLine($"Skipping invalid line: {line}");
+                        continue;
+                    }
 
-                Reference reference = (startVerse == endVerse) ? new Reference(book, chapter, startVerse) : new Reference(book, chapter, startVerse, endVerse);
-                scriptures.Add(new Scripture(reference, parts[1]));
+                    var referenceParts = parts[0].Split(':');
+                    if (referenceParts.Length < 3 || referenceParts.Length > 4)
+                    {
+                        Console.WriteLine($"Skipping invalid reference: {parts[0]}");
+                        continue;
+                    }
+
+                    string book = referenceParts[0];
+                    if (!int.TryParse(referenceParts[1], out int chapter) || !int.TryParse(referenceParts[2], out int startVerse))
+                    {
+                        Console.WriteLine($"Skipping invalid chapter or verse: {parts[0]}");
+                        continue;
+                    }
+
+                    int endVerse = startVerse;
+                    if (referenceParts.Length == 4 && !int.TryParse(referenceParts[3], out endVerse))
+                    {
+                        Console.WriteLine($"Skipping invalid end verse: {parts[0]}");
+                        continue;
+                    }
+
+                    Reference reference = (startVerse == endVerse) ? new Reference(book, chapter, startVerse) : new Reference(book, chapter, startVerse, endVerse);
+                    scriptures.Add(new Scripture(reference, parts[1]));
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while reading the file: {ex.Message}");
             }
 
             return scriptures;
@@ -97,4 +121,3 @@ namespace ScriptureMemorization
         }
     }
 }
-
