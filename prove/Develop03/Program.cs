@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace ScriptureMemorization
+namespace ScriptureMemorization//I used this to organize th code and giving  hierarchical mens and preventing name conflicts of calss
 {
     public static class Program
     {
         public static void Main(string[] args)
         {
-            List<Scripture> scriptures = LoadScriptures("scriptures.txt");
+            List<Scripture> scriptures = LoadScriptures("scriptures.txt");//This loads the scriptures from scriptures.txt
             Random random = new Random();
-            Scripture scripture = scriptures[random.Next(scriptures.Count)];
+            Scripture scripture = scriptures[random.Next(scriptures.Count)]; //Now this seelects the random scriptures from scriptures list
 
             while (true)
             {
-                Console.Clear();
+                Console.Clear(); //This is from instructor in a course. If the user input is correct, this can clear the words one by one
                 Console.WriteLine(scripture);
 
                 if (scripture.AllWordsHidden())
@@ -42,16 +42,16 @@ namespace ScriptureMemorization
             }
         }
 
-        static List<Scripture> LoadScriptures(string filePath)
+        static List<Scripture> LoadScriptures(string filePath)//Loads the scripture from scripture.txt
         {
-            List<Scripture> scriptures = new List<Scripture>();
+            List<Scripture> scriptures = new List<Scripture>(); //Made scripture list for fetchig when needed
 
             try
             {
-                foreach (var line in File.ReadAllLines(filePath))
+                foreach (var line in File.ReadAllLines(filePath))//I can use string [] file=system.IO.ReadAllLines("fineName")
                 {
-                    var parts = line.Split('|');
-                    if (parts.Length != 2)
+                    var parts = line.Split('|');//This is format in the scripture.txt which the verses and paragraph separates
+                    if (parts.Length != 2)//
                     {
                         Console.WriteLine($"Skipping invalid line: {line}");
                         continue;
