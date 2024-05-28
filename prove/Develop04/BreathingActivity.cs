@@ -1,4 +1,4 @@
-public class BreathingActivity : Activity
+public class BreathingActivity : Activity    // creating BreathingActivity as a child class for Activity
 {
     public BreathingActivity() : base("Breathing", "Help the user pace their breathing.")
     {
@@ -7,7 +7,7 @@ public class BreathingActivity : Activity
     public override void Execute()
     {
         Start();
-        int halfDuration = Duration / 2;
+        int halfDuration = _Duration / 2;
         for (int i = 0; i < halfDuration; i++)
         {
             Console.WriteLine("Breathe in...");

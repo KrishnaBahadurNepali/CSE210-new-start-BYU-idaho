@@ -1,6 +1,6 @@
-public class ListingActivity : Activity
+public class ListingActivity : Activity     //ListingActivity inherit from Activity class
 {
-    private string[] prompts = {
+    private string[] prompts = {        //these are the prompt list
         "List as many things as you can in a certain area of strength or positivity.",
         "What are you grateful for?",
         "What are your talents?",
@@ -16,7 +16,7 @@ public class ListingActivity : Activity
         Start();
         Random random = new Random();
         Console.WriteLine(prompts[random.Next(prompts.Length)]);
-        PauseWithAnimation(Duration);
+        PauseWithAnimation(_Duration);
         End();
     }
 }

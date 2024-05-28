@@ -4,8 +4,8 @@ public class Program
     {
         while (true)
         {
-            Console.Clear();
-            Console.WriteLine("Select an activity:");
+            Console.Clear();//this clears the previous screen 
+            Console.WriteLine("Select an activity:");//Writing all in a order
             Console.WriteLine("1. Breathing Activity");
             Console.WriteLine("2. Reflection Activity");
             Console.WriteLine("3. Listing Activity");
@@ -13,8 +13,8 @@ public class Program
             Console.Write("Enter your choice: ");
             string choice = Console.ReadLine();
 
-            Activity activity = null;
-            switch (choice)
+            Activity activity = null;//declares andinitialize activity to null
+            switch (choice) //I have choosed switch method instead of if or while loop
             {
                 case "1":
                     activity = new BreathingActivity();
@@ -32,7 +32,7 @@ public class Program
                     continue;
             }
 
-            activity.Execute();
-        }
+            activity.Execute(); //this will call the execute method of the Activity class which was initialized to null
+        }           //And also calls the Execute() from other class
     }
 }
