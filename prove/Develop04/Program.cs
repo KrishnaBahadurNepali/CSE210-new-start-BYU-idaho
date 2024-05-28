@@ -1,9 +1,38 @@
-using System;
-
-class Program
+public class Program
 {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop04 World!");
+        while (true)
+        {
+            Console.Clear();
+            Console.WriteLine("Select an activity:");
+            Console.WriteLine("1. Breathing Activity");
+            Console.WriteLine("2. Reflection Activity");
+            Console.WriteLine("3. Listing Activity");
+            Console.WriteLine("4. Exit");
+            Console.Write("Enter your choice: ");
+            string choice = Console.ReadLine();
+
+            Activity activity = null;
+            switch (choice)
+            {
+                case "1":
+                    activity = new BreathingActivity();
+                    break;
+                case "2":
+                    activity = new ReflectionActivity();
+                    break;
+                case "3":
+                    activity = new ListingActivity();
+                    break;
+                case "4":
+                    return;
+                default:
+                    Console.WriteLine("Invalid choice, please try again.");
+                    continue;
+            }
+
+            activity.Execute();
+        }
     }
 }
