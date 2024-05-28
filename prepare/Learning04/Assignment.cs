@@ -9,19 +9,19 @@ public class Assignment
         _topic = topic;
     }
 
-    // We will provide Getters for our private member variables so they can be accessed
-    // later both outside the class as well is in derived classes.
-    public string GetStudentName()
-    {
-        return _studentName;
+    
+        public string GetStudentName() //  provide Getters for our private member variables so they can be accessed
+    {                                   // later both outside the class as well is in derived classes.
+
+        return _studentName; //This GetStudentName() function will be called to main class to get the private student name 
     }
 
-    public string GetTopic()
+    public string GetTopic() //this will returns the topic
     {
         return _topic;
     }
 
-    public string GetSummary()
+    public string GetSummary() //this function will returns the both if it is called publicly to any other class.
     {
         return _studentName + " - " + _topic;
     }

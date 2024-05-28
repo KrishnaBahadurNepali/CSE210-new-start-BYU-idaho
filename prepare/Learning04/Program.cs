@@ -5,16 +5,16 @@ class Program
     static void Main(string[] args)
     {
         // I have created base class Assignment to next class and here declaring the variable summary
-        Assignment summary = new Assignment("Samuel Bennett", "Multiplication");
-        Console.WriteLine(summary.GetSummary());
+        Assignment summary1 = new Assignment("Krishna Bahadur Nepali", "CSE210 week 04 ");
+        Console.WriteLine(summary1.GetSummary());
 
-        // Now create the derived class assignments
-        MathAssignment a2 = new MathAssignment("Roberto Rodriguez", "Fractions", "7.3", "8-19");
-        Console.WriteLine(a2.GetSummary());
-        Console.WriteLine(a2.GetHomeworkList());
+        // Now create the derived class assignments and pass them to the class called MathAssignment including 4 variables
+        MathAssignment summery2 = new MathAssignment("Manisha Maurati", "Trigonometric", "8", "10-20");//ready to accept these 4parameters by MathAssignmet with three variable parameters
+        Console.WriteLine(summery2.GetSummary());
+        Console.WriteLine(summery2.GetHomeworkList());
 
-        WritingAssignment a3 = new WritingAssignment("Mary Waters", "European History", "The Causes of World War II");
-        Console.WriteLine(a3.GetSummary());
-        Console.WriteLine(a3.GetWritingInformation());
+        WritingAssignment summery3= new WritingAssignment("Pooja Ghimire", "About Nepal", "The history of Mountain everest");
+        Console.WriteLine(summery3.GetSummary());
+        Console.WriteLine(summery3.GetWritingInformation());
     }
 }
