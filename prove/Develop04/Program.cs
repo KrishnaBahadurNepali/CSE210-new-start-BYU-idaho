@@ -7,9 +7,10 @@ public class Program
             Console.Clear();//this clears the previous screen 
             Console.WriteLine("Select an activity:");//Writing all in a order
             Console.WriteLine("1. Breathing Activity");
-            Console.WriteLine("2. Reflection Activity");
+            Console.WriteLine("2. Reflection Activity; Think about yourself");
             Console.WriteLine("3. Listing Activity");
-            Console.WriteLine("4. Exit");
+            Console.WriteLine("4. Do you want to creat a journal?");
+            Console.WriteLine("5. Exit");
             Console.Write("Enter your choice: ");
             string choice = Console.ReadLine();
 
@@ -33,6 +34,8 @@ public class Program
             }
 
             activity.Execute(); //this will call the execute method of the Activity class which was initialized to null
-        }           //And also calls the Execute() from other class
+        }  
+             //And also calls the Execute() from other class
+             
     }
 }
