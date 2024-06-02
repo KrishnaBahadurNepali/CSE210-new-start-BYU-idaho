@@ -1,0 +1,7 @@
+100
+1
+SimpleGoal,Exercise,100,0,0,0
+EternalGoal,Readig scripture every day,100,0,0,0
+ChecklistGoal,Do CSE210 assignment daily,100,0,10,10
+NegativeGoal,to walk on garden,100,0,0,0
+SimpleGoal,drinking water,10,0,0,0
