@@ -3,13 +3,13 @@ namespace EternalQuest
     // Class to manage goals and the user's progress
     class GoalManager
     {
-        private List<Goal> goals = new List<Goal>();
-        private int totalScore = 0;
-        private int level = 1;
+        private List<Goal> goals = new List<Goal>();//This is private set for the score
+        private int totalScore = 0; //total score is private/ encapsulated
+        private int level = 1; 
 
-        public void CreateNewGoal()
+        public void CreateNewGoal()//this function is called by program.cs creat a new goal in the class GoalManager
         {
-            Console.WriteLine("\nCreate New Goal");
+            Console.WriteLine("\nCreate New Goal");//Goals are different, so I have specified which goal 
             Console.WriteLine("1. Simple Goal");
             Console.WriteLine("2. Eternal Goal");
             Console.WriteLine("3. Checklist Goal");
@@ -26,7 +26,7 @@ namespace EternalQuest
             switch (goalType)
             {
                 case "1":
-                    goals.Add(new SimpleGoal(name, points));
+                    goals.Add(new SimpleGoal(name, points));//direct access to the goals by add method
                     break;
                 case "2":
                     goals.Add(new EternalGoal(name, points));
@@ -41,7 +41,7 @@ namespace EternalQuest
                     goals.Add(new ChecklistGoal(name, points, targetCount, bonusPoints));
                     break;
                 case "4":
-                    goals.Add(new NegativeGoal(name, points));
+                    goals.Add(new NegativeGoal(name, points));//Negative goals will decline your points
                     break;
                 default:
                     Console.WriteLine("Invalid goal type. Please try again.");
@@ -52,7 +52,7 @@ namespace EternalQuest
         public void RecordEvent()
         {
             Console.WriteLine("\nRecord an Event");
-            for (int i = 0; i < goals.Count; i++)
+            for (int i = 0; i < goals.Count; i++)//initialize i=0, until i<goals.count,increases by +1
             {
                 Console.WriteLine($"{i + 1}. {goals[i].Name}");
             }
@@ -62,7 +62,7 @@ namespace EternalQuest
             if (goalIndex >= 0 && goalIndex < goals.Count)
             {
                 goals[goalIndex].RecordEvent();
-                if (goals[goalIndex] is NegativeGoal)
+                if (goals[goalIndex] is NegativeGoal)//Negative goal can reduce the point.
                 {
                     totalScore -= goals[goalIndex].Points;
                 }

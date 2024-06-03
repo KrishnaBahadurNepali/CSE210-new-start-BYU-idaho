@@ -3,7 +3,7 @@ namespace EternalQuest
     // Simple goal that can be marked as complete
     class SimpleGoal : Goal
     {
-        private bool isComplete;
+        private bool isComplete; //I choosed to make private the iscomplete variable 
 
         public SimpleGoal(string name, int points) : base(name, points)
         {

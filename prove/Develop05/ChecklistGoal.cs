@@ -4,8 +4,8 @@ namespace EternalQuest
     class ChecklistGoal : Goal
     {
         public int TargetCount { get; }
-        public int CurrentCount { get; set; }  // Add setter for CurrentCount
-        public int BonusPoints { get; }
+        public int CurrentCount { get; set; }  // Add setter for CurrentCount //I Have used getter and setter
+        public int BonusPoints { get; }//Making these variable a  public can be easier to get access from other classes
 
         public ChecklistGoal(string name, int points, int targetCount, int bonusPoints) : base(name, points)
         {
